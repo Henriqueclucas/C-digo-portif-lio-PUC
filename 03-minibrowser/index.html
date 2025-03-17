@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Browser Experimental</title>
+</head>
+<body>
+    
+
+
+<script>
+    
+    
+   // Objetos: representa  coisas com multiplos atributos para representa-las
+   var aba1 = {
+    titulo: 'Titulo aba 01',
+    url: 'https://salavirtual.pucrs.br/curso/desenvolvimento-full-stack-48/conteudo?item=697565',
+
+   };
+
+   var aba2 = {
+    titulo: 'Titulo aba 02',
+    url: 'https://login.microsoftonline.com/da49a844-e2e3-40af-86a6-c3819d704f49/oauth2/v2.0/authorize?client_id=6dc3a6ce-21c9-48c2-887e-36db0bd7fe60&scope=6dc3a6ce-21c9-48c2-887e-36db0bd7fe60%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Festudante.estacio.br&client-request-id=0195a4cf-1441-7856-ad3d-72c97b99de59&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=3.28.1&client_info=1&code_challenge=_Zt7ZRKY8Vjiwbe3g0IScIQh3zDxUtfOiqh8JI5QdfE&code_challenge_method=S256&login_hint=202503589861%40alunos.estacio.br&X-AnchorMailbox=Oid%3A8bb12ddd-4c30-4f82-bd31-cb93a77b4027%40da49a844-e2e3-40af-86a6-c3819d704f49&nonce=0195a4cf-1445-7d1e-9b41-009197b82f94&state=eyJpZCI6IjAxOTVhNGNmLTE0NDUtNzQwOS1hOThhLWE2NjA0ZWFiNTAxOCIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D',
+
+   };
+   // Entrada
+   // Arrays: listas de coisas
+   const abas = [
+    aba1,
+    aba2
+   ];
+
+   //Processamento
+
+   for(aba of abas) {
+        console.log(aba.titulo);
+
+   }
+
+    //Output
+   var valorAtualDoHTML = document.body.innerHTML;
+   document.body.innerHTML = valorAtualDoHTML + `<li><a href="${aba.url}"${aba.titulo}<a/></li>`;
+
+    
+    // O que tem no navegador?
+    // - titulo
+    // - url
+    // - pagina de fato
+
+
+
+
+
+</script>
+
+<link rel="stylesheet" href="./syle.css"/>
+
+</body>
+</html>
