@@ -1,0 +1,11 @@
+var: 
+- Declara uma variavel com escopo de função 
+- Pode ter o valor de inicialização definido 
+
+let:
+- Declara uma variavel com escopo de bloco ou variavel local
+- Pode ter valor de inicialização definido 
+
+const:
+- Declara uma constante com escopo de bloco
+- Atribuição única mas com valores de objeto alterável 

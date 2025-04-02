@@ -1,0 +1,17 @@
+- Sintaxe mais curta quando comparada a uma função 
+- Restrições: 
+    Melhora aplicadas para funções que não sejam metodos
+    Não podem ser usadas como  construtoras de objetos.
+
+    (param1, param2, ...paramN) => {stetaments}
+    (param1, param2, ...paramN) => expression
+    -Equivalente a: => {retunr the expression;}
+
+    -Parenteses são opicionais quando só há um nome de paramentro:
+    (singleParam) => {stetaments};
+    singleParam => {stetaments};
+
+    - A lista de paramentros para uma função sem paramentros DEVE ser escrita com um par de parenteses ou _.
+    () => {stetaments};
+    _=> {stetaments};
+
