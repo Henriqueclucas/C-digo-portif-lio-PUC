@@ -44,3 +44,23 @@
 
     const professor = new Professor(["Jorge" , "Silva"], 1967, "Mestre");
     console.log(professor);
+
+    //polimorfismo
+
+    class Estudante1 extends Pessoa{
+        constructor(nome, anoDeNascimento, profissao, matricula){
+            super(nome, anoDeNascimento, profissao);
+            this.matricula = matricula;
+        };
+        ola(){
+            super.ola();
+            console.log(' colegas');
+        }
+    }; 
+
+    const aluno1 = new Estudante1(["Fulano", "O tal"], 1997, "Estudante", 1234655);
+    console.log(aluno1);
+
+    aluno1.ola();
+
+    
