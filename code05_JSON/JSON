@@ -1,0 +1,7 @@
+- JSON: JavaScript Object Notation
+ - Formato textual para serelização de dados
+ - É independente de lingugem 
+ - Muito utilizado para retorno de Serviços Web REST
+
+ - Capaz de representar tipos primitivos, estruturados (objetos e arranjos)
+ 

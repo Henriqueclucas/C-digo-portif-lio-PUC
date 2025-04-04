@@ -1,0 +1,8 @@
+- Assincrono significa que não se espera a função chamada terminar sua execução
+para o nosso codigo seguir em frente.
+
+- CallBacks: 
+    -Muitas APIs de JS para funções assincronas utiliza o conceito de funções callback, são funções
+    que são chamadas quando uma outro função terminou seu processamento 
+    -Resulta em pequenas funções que são encadedas para realizar um processamento (Encadear muitos callbacks resulta em 
+    um codigo de dificil manutenção) 
