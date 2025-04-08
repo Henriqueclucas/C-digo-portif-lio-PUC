@@ -1,0 +1,46 @@
+Twelve factor apps ( criada por Heroku): 
+
+    - Utilizar formatos declarativos para configuração de ambientes para facilitar automação
+    - Garantir maior portabilidade possível em ambientes 
+    - Ter compatibilidade com  plataformas nuvem, sem depender de servidores e administração de sistemas 
+    - Minimizar o impacto de migração entre ambientes de desenvolvimento e produção 
+    - Ser escalavel sem alterações significantes 
+
+01 - Base de código(codebase):
+    Cada aplicação possui  uma base de código única e centralizada. Todos os deploys são reflexo da base de código.
+
+02 - Gerenciamento de dependencias ( Dependecies):
+    Declare as dependencias das aplicações de forma explicita com os gerenciadores de pacote.
+
+03 - Configuração:
+    Armazename as configurações no ambiente(utilizando variaveis do sistema operacional)
+
+04 - Backing Service:
+    - Trate os serviçoes como recursos. 
+
+05 - Construa, lance, execute (Build, realese, run):
+    Separar os estagios de build e realese do projeto 
+
+06 - Processos: 
+ Execute a aplicação como um ou mais processos que não armazenam estado
+
+07 - Vinculo de Portas(Port Binding):
+    - Utilizar port biding para expor serviços
+
+08 - Concorrencia.
+    - Escale através de processo modelo, que é criar cópias da sua aplicação. Existem dois tpos de escalabildiade:
+    º Escalabilidade vertical: onde eu aumento a quantidade de hardware onde está sendo executada a opraçao.
+    - Escalabilidade horizontal: que é onde eu crio replicas da minha aplicação para ganratir o processamento das requisições,
+
+09 - Descartabilidade (Disposalbe):
+    Processos com rapidas inicialização 
+
+10 - Paridade entre desenvolvimento , homologação:
+    Mantenha o desenvolvimento , homologação e a produção mais acessivel possivel.
+
+11 - Logs
+    Trate logs comolfluxo de eventos
+
+12: Processoas administratios:
+    Rode tarefas de administração/gestão em processos pontuais 
+

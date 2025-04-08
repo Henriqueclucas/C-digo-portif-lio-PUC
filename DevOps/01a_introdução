@@ -1,0 +1,31 @@
+-Para o desenvolvedor, o desenvolvimento do software começa na etapa de planejamento.
+-Após isso se inicia o desenvolvimento, atentendo os requisitos documentados na etapa anterior
+-Após isso vem a fase de teste
+-Em seguida vem a implantação, que é quando o software é disponibilizado para o usuario.
+
+-Profissional de operação: é o cara que vai cuidar do software que está  em implantação, que esta sendo executado
+-Profissional de desenvolvimento: que é o cara que trabalha no desenvolvimento do software
+
+-Esses profissionais não se comunicam
+
+-O DevOps: Interesse em comum, foco no produto
+        - Comunicação agil e simplificada
+        -O objetivo é sempre resolver o problema e aprender com ele
+        - 3 maneiras: fluxo, feedbacj, aprendizado continuo e experimentação 
+
+-Primeira maneira: Fluxo
+    - Analise e otmização dos processos
+    - INclusão de testes
+    - Integração contínua e deploy continuo 
+    - Entregas de baixo risco 
+
+-Segunda maneira: Feedback
+    - Implementar e coletar metricas
+    - Observalidade - coleta de metricas, logs, tracing 
+    - Teste A/B
+    - Feedback dos resultados para replanejamento 
+
+-Terceira maneira: Feedback continuo e experimentação 
+    - Aprender com os erros
+    - Experimentação controlada
+    - Disseminar o conhecimento e padronizar o que dá certo  
