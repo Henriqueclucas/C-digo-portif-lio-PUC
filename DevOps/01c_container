@@ -1,0 +1,74 @@
+- Todos os processos da minha etapa de criação de ambiente e execução de aplicação 
+serão feitos nos containers.
+
+- Quando falo em utilziar containers, estou falando de isolamento de processos
+
+- Com container eu ganho portabilidade, pois ele roda em servidores e nuvem
+- Isolamento entre processos
+- Controle sobre processos
+- Idempotência : quando eu garanto que algo vai ser executado sempre com o mesmo comportamento 
+- Portabilidade 
+- Confiabilidade de comportamento 
+
+A criação de containers se baseia em dois elementos chaves: imagens e containers.
+
+- Imagem: é o elemento base para voce criar um container. Todo container tem como origem uma imagem.
+A imagem é o projeto de execução do container. É como se fosse um blueprint de um prédio, a definição do que vai ser o predio. 
+O container é o objeto resultante da imagem. Nele tem tudo que você precisa ter para executar uma aplicação
+
+Docker
+
+ - Ele é divido em três componentes: 
+    
+    -> Docker Daemon: ele é o motor de execução e gestão dos objetos do docker : imagem, container, networks, fire system, volume. Tudo referente ao docker é gerenciado por ele.
+    
+    -> Docker Host: a maquina que roda o Docker Daemon.
+    
+    -> Docker client: é a ferramenta que vai interagir com o Docker Daemon, então sempre que você executar qualquer instrução com o docker dameon, você está utilizando o Docker Client.
+    
+    -> Docker Register: é um repositorio de imagens docker, onde eu consigo baixar e fazer updload de imagens para uma repositorio. Ele funciona muito parecido com o GitHub.
+
+    - Comandos:
+
+    docker info
+Exibe informações detalhadas do sistema Docker (containers, images, volumes, etc.).
+
+docker ps
+Lista containers em execução.
+
+docker ps -a
+Lista todos os containers (ativos e parados).
+
+docker run <imagem>
+Cria e executa um container.
+Ex: docker run ubuntu
+
+docker run -it <imagem> bash
+Roda interativamente com terminal.
+Ex: docker run -it ubuntu bash
+
+docker run -d <imagem>
+Executa o container em segundo plano (detached).
+
+docker run --name <nome> <imagem>
+Define um nome para o container.
+Ex: docker run --name meu-nginx nginx
+
+docker exec -it <container> bash
+Executa um comando dentro do container.
+Ex: docker exec -it meu-nginx bash
+
+docker stop <container>
+Para um container.
+
+docker start <container>
+Inicia um container parado.
+
+docker restart <container>
+Reinicia um container.
+
+docker rm <container>
+Remove um container.
+
+
+    
