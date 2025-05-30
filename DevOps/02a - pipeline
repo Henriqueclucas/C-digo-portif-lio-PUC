@@ -1,0 +1,8 @@
+- A pipelina é um conjunto de etapas que são feitos de forma sequêncial, e cada passo é valido e caso seja validado com sucesso
+passa para o seguinte.
+
+- Pipeline de integração continua: ela tem como objetivo integrar o que você está desenvolvendo com um produto ja existente. 
+
+- Pipeline de Deploys Continuo: esse processo vai começar a patir da release. A patir da criação de uma nova Realese
+é feito todo o processo em que essa realese vai passar por teste de qualidade, e após feito o aceite ela vai para deploy.
+
