@@ -1,7 +1,10 @@
 import sqlalchemy as sa;
 import sqlalchemy.orm as orm;
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
 
-egine = sa.create_engine("sqlite///BD-Relacional//vendas.db")
+
+engine = sa.create_engine("sqlite:///Pos/codigo-da-aula/BD-Relacional/vendas01.db", echo = True)
 base = orm.declarative_base()
 
 class cliente(base):
@@ -9,7 +12,7 @@ class cliente(base):
 
     cpf = sa.Column(sa.CHAR(14), primary_key = True, index = True)
     nome = sa.Column(sa.VARCHAR(100), nullable = False)
-    email = sa.Column(sa.VARCHER(50), nullable = False)
+    email = sa.Column(sa.VARCHAR(50), nullable = False)
     genero = sa.Column(sa.CHAR(1))
     salario = sa.Column(sa.DECIMAL(10,2))
     dia_mes_aniversario = sa.Column(sa.CHAR(5))
@@ -31,8 +34,7 @@ class cliente(base):
         __tablename__ = "produto"
 
         codBarras = sa.Column(sa.INTEGER, primary_key = True, index = True, nullable = False)
-        registro_fornecedor = sa.Column(sa.INTEGER, sa.ForeignKey("fornecedor.registro_fornecedor", ondelete = "NO ACTION",
-        onupdate = "CASCADE"), index = True, nullable = False)
+        registro_fornecedor = sa.Column(sa.INTEGER, sa.ForeignKey("fornecedor.registro_fornecedor", ondelete="NO ACTION", onupdate="CASCADE"), index = True)
         dcs_produto = sa.Column(sa.VARCHAR(100), nullable = False)
         genero = sa.Column(sa.CHAR(1))
 
@@ -48,18 +50,17 @@ class cliente(base):
         genero = sa.Column(sa.CHAR(1))
 
     class venda(base):
-        _tablename__ = "venda"
+        __tablename__ = "venda"
 
         idTransacao = sa.Column(sa.INTEGER, primary_key = True, index = True, nullable = False)
-        cpf = sa.Column(sa.CHAR(14), sa.ForeignKey("cliente.cpf", ondelete = "NO ACTION", onupdate = "CASCADE"), index = True, nullable = False)
-        registro_vendedor = sa.Column(sa.INTEGER, sa.ForeignKey("vendedor.registro_vendedor"), ondelete = "NO ACTION", onupdate = "CASCADE", index = True, nullable = False)
-        codBarras = sa.Column(sa.INTEGER, sa.ForeignKey("produto.codBarras"), ondelete = "NO ACTION", onupdate = "CASCADE", index = True nullable = False)
+        cpf = sa.Column(sa.CHAR(14), sa.ForeignKey("cliente.cpf", ondelete = "NO ACTION", onupdate = "CASCADE"), index = True)
+        registro_vendedor = sa.Column(sa.INTEGER, sa.ForeignKey("vendedor.registro_vendedor", ondelete = "NO ACTION", onupdate = "CASCADE"), index = True)
+        codBarras = sa.Column(sa.INTEGER, sa.ForeignKey("produto.codBarras", ondelete = "NO ACTION", onupdate = "CASCADE"), index = True)
 
      
     
     try:
-        base.metadata.create_all(engine) #criar tabela 
-        print("Tabelas criadas")
-    except ValueError:
-        ValueError()
+       base.metadata.create_all(engine) #criar tabela 
+       print("Tabelas criadas")
+    except ValueError: ValueError()
         
