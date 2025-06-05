@@ -1,12 +1,19 @@
-import sqlalchemy as sa;
-import sqlalchemy.orm as orm;
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import MetaData
+import sqlalchemy as sa
+import sqlalchemy.orm as orm
+import os
 
+# Criação de pastas, se necessário
+db_dir = os.path.join(os.getcwd(), "Pós-Graduaçao", "Nova Pasta", "C-digo-portif-lio-PUC", "BD-Relacional")
+os.makedirs(db_dir, exist_ok=True)
 
-engine = sa.create_engine("sqlite:///Pos/codigo-da-aula/BD-Relacional/vendas01.db", echo = True)
+# Caminho absoluto do banco de dados
+db_path = os.path.join(db_dir, "vendas01.db")
+
+# Correção na string de conexão: use três barras para relativo ou quatro para absoluto
+engine = sa.create_engine(f"sqlite:///{db_path}", echo=True)
+
 base = orm.declarative_base()
+
 
 class cliente(base):
     __tablename__ = "cliente"
@@ -21,7 +28,7 @@ class cliente(base):
     cidade = sa.Column(sa.VARCHAR(20))
     uf = sa.Column(sa.CHAR(2))
 
-    class fornecedor(base):
+class fornecedor(base):
         __tablename__ = "fornecedor"
 
         registro_fornecedor = sa.Column(sa.INTEGER, primary_key = True, index = True, nullable = False)
@@ -31,7 +38,7 @@ class cliente(base):
         uf = sa.Column(sa.CHAR(2))
 
 
-    class produto(base):
+class produto(base):
         __tablename__ = "produto"
 
         codBarras = sa.Column(sa.INTEGER, primary_key = True, index = True, nullable = False)
@@ -41,7 +48,7 @@ class cliente(base):
 
 
 
-    class vendedor(base):
+class vendedor(base):
         __tablename__ = "vendedor"
 
         registro_vendedor = sa.Column(sa.INTEGER, primary_key = True, index = True, nullable = False)
@@ -50,7 +57,7 @@ class cliente(base):
         email = sa.Column(sa.VARCHAR(100), nullable = False)
         genero = sa.Column(sa.CHAR(1))
 
-    class venda(base):
+class venda(base):
         __tablename__ = "venda"
 
         idTransacao = sa.Column(sa.INTEGER, primary_key = True, index = True, nullable = False)
@@ -60,8 +67,9 @@ class cliente(base):
 
      
     
-    try:
+try:
        base.metadata.create_all(engine) #criar tabela 
        print("Tabelas criadas")
-    except ValueError: ValueError()
+except Exception as e:
+    print(f"Erro ao criar tabelas: {e}")
         
