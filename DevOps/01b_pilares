@@ -41,6 +41,6 @@ Twelve factor apps ( criada por Heroku):
 11 - Logs
     Trate logs comolfluxo de eventos
 
-12: Processoas administratios:
+12: Processoas administrativos:
     Rode tarefas de administração/gestão em processos pontuais 
 
