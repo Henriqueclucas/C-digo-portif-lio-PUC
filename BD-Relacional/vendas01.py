@@ -2,6 +2,7 @@ import sqlalchemy as sa;
 import sqlalchemy.orm as orm;
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import MetaData
 
 
 engine = sa.create_engine("sqlite:///Pos/codigo-da-aula/BD-Relacional/vendas01.db", echo = True)
